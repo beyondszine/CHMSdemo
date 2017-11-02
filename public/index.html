@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Enter the RTSP link:</h2>
+  <p>The link below has to be a Publically Reachable valid RTSP link.</p>
+
+  <form action="/validateInputsCHMS" method="POST">
+
+    <div class="form-group">
+      <label for="rtsplink">RTSP Link:</label>
+      <input type="text" class="form-control" id="rtsplink" required="true" name="rtsplink">
+    </div>
+
+    <div class="form-group">
+      <label for="accesstoken">Token:</label>
+      <input type="text" class="form-control" id="accesstoken" required="true" name="accesstoken">
+    </div>
+
+    <div class="container">
+      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Add Video Analytics Behaviors</button>
+      <div id="demo" class="collapse">
+        <h2>
+          Select the Behaviors you want:
+        </h2>
+          <p>
+            By default all will be selected:
+          </p>
+          <div>
+            <label class="checkbox">
+              <input type="checkbox" value="Occlusion" name="Occlusion" checked>Occlusion
+            </label>
+          </div>
+          <div>
+              <label class="checkbox">
+                <input type="checkbox" value="VLoss" name="VLoss" checked>Video Loss
+              </label>
+          </div>
+          <div>
+            <label class="checkbox">
+              <input type="checkbox" value="CTampering" name="CTampering" checked>Camera Tampering
+            </label>
+          </div>
+            <div>
+              <label class="checkbox">
+                <input type="checkbox" value="ODetection" name="ODetection" checked>Objects Detection
+              </label>
+            </div>
+            <div>
+              <label class="checkbox">
+                <input type="checkbox" value="FRec" name="FRec">Face Recognition
+              </label>
+            </div>
+            <div>
+              <label class="checkbox">
+                <input type="checkbox" value="PDectection" name="PDectection" checked>Person Detection
+              </label>
+            </div>
+            <div>
+                <label class="checkbox">
+                  <input type="checkbox" value="PCount" name="PCount" checked>Person Count
+              </label>
+            </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div>
+        <span></span>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  function preValidation(){
+  //  window.alert("Are you sure to add your Video ?");
+    console.log("pre/client side validation done:");
+  }
+</script>
+</body>
+</html>
